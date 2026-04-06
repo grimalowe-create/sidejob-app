@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>副業診断ツール</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Meiryo", sans-serif;
+      background: #f1f5f9;
+      color: #1f2937;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 560px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+      padding: 32px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 2rem;
+    }
+
+    p.description {
+      margin: 0 0 24px;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .question {
+      margin-bottom: 22px;
+    }
+
+    .question h2 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+    }
+
+    .options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      background: #f8fafc;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .option:hover {
+      border-color: #cbd5e1;
+      background: #eff6ff;
+    }
+
+    .option input {
+      accent-color: #2563eb;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border: none;
+      border-radius: 14px;
+      background: #2563eb;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+    }
+
+    .result {
+      display: none;
+      margin-top: 24px;
+      padding: 20px;
+      border-radius: 16px;
+      background: #eef2ff;
+      border: 1px solid #c7d2fe;
+    }
+
+    .result h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .result p {
+      margin: 0;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <h1>副業診断ツール</h1>
+    <p class="description">以下の質問に答えて、あなたにおすすめの副業を診断します。時間・費用・得意なことを選んでください。</p>
+
+    <section class="question">
+      <h2>1. 1日の作業時間</h2>
+      <div class="options">
+        <label class="option"><input type="radio" name="time" value="short">1時間未満</label>
+        <label class="option"><input type="radio" name="time" value="medium">1〜3時間</label>
+        <label class="option"><input type="radio" name="time" value="long">3時間以上</label>
+      </div>
+    </section>
+
+    <section class="question">
+      <h2>2. 初期費用</h2>
+      <div class="options">
+        <label class="option"><input type="radio" name="cost" value="none">ほぼなし</label>
+        <label class="option"><input type="radio" name="cost" value="low">1〜5万円</label>
+        <label class="option"><input type="radio" name="cost" value="high">5万円以上</label>
+      </div>
+    </section>
+
+    <section class="question">
+      <h2>3. 得意なこと</h2>
+      <div class="options">
+        <label class="option"><input type="radio" name="skill" value="writing">文章を書く</label>
+        <label class="option"><input type="radio" name="skill" value="speaking">話す・動画</label>
+        <label class="option"><input type="radio" name="skill" value="programming">プログラミング</label>
+        <label class="option"><input type="radio" name="skill" value="none">特になし</label>
+      </div>
+    </section>
+
+    <button id="diagnoseButton" type="button">診断する</button>
+    <div id="result" class="result"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
