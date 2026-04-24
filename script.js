@@ -156,3 +156,23 @@ function handleDiagnose() {
 }
 
 diagnoseButton.addEventListener("click", handleDiagnose);
+
+// プライバシーポリシー モーダル
+function openPrivacyModal() {
+    document.getElementById('privacyModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closePrivacyModal() {
+    document.getElementById('privacyModal').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('privacyModal').addEventListener('click', function (e) {
+        if (e.target === this) closePrivacyModal();
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closePrivacyModal();
+    });
+});
