@@ -12,6 +12,7 @@ function showResult(title, description) {
     <h3>${title}</h3>
     <p>${description}</p>
   `;
+  document.getElementById('relatedArticles').style.display = 'block';
 }
 
 function determineSideJob(time, cost, skill, skillLevel, purpose, duration) {
